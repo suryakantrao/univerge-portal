@@ -1,0 +1,143 @@
+.page { display: flex; flex-direction: column; gap: 22px; }
+
+.pageHeader {
+  display: flex; align-items: flex-start;
+  justify-content: space-between; gap: 16px; flex-wrap: wrap;
+}
+.pageTitle { font-size: 26px; font-weight: 900; color: var(--text); margin: 0 0 4px; }
+.pageSub   { font-size: 14px; color: var(--text-muted); margin: 0; }
+
+.toolbar { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+
+.searchInput {
+  flex: 1;
+  min-width: 200px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1.5px solid var(--input-border);
+  background: var(--input);
+  color: var(--text);
+  font-size: 14px;
+  font-family: inherit;
+}
+.searchInput:focus { outline: none; border-color: var(--blue); }
+.searchInput::placeholder { color: var(--text-subtle); }
+
+.typeFilters {
+  display: flex;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--card);
+}
+.typeBtn {
+  padding: 9px 16px;
+  border: none;
+  border-right: 1px solid var(--border);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: inherit;
+  color: var(--text-muted);
+  background: transparent;
+  transition: all 0.14s;
+}
+.typeBtn:last-child { border-right: none; }
+.typeBtn:hover { color: var(--text); background: var(--card-hover); }
+.typeBtnActive { background: var(--blue) !important; color: #fff !important; }
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.fileCard {
+  background: var(--card);
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.15s;
+  animation: fadeUp 0.3s ease both;
+}
+.fileCard:hover { transform: translateY(-2px); box-shadow: var(--shadow); border-color: var(--border-strong); }
+.fileCardSelected { border-color: var(--blue) !important; }
+
+.fileThumbnail {
+  height: 150px;
+  background: linear-gradient(135deg, rgba(0,103,251,0.1), rgba(255,153,0,0.1));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 48px;
+  border-bottom: 1px solid var(--border);
+}
+.fileMeta { padding: 14px; }
+.fileName {
+  font-size: 13px; font-weight: 800; color: var(--text);
+  margin: 0 0 3px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.fileDetails { font-size: 11px; color: var(--text-muted); margin: 0 0 8px; }
+.fileTags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 10px; }
+.fileTag {
+  padding: 2px 8px;
+  border-radius: 99px;
+  font-size: 10px;
+  font-weight: 700;
+  background: rgba(0,103,251,0.1);
+  color: var(--blue);
+}
+.fileActions { display: flex; gap: 6px; }
+
+.empty {
+  text-align: center;
+  padding: 60px;
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 15px;
+}
+
+/* Detail panel */
+.detailPanel {
+  position: fixed !important;
+  right: 20px;
+  top: 80px;
+  width: 300px;
+  z-index: 50;
+  box-shadow: var(--shadow-lg) !important;
+}
+.detailHeader {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 14px;
+}
+.detailTitle { font-size: 14px; font-weight: 800; color: var(--text); margin: 0; }
+.detailClose {
+  background: none; border: none; cursor: pointer;
+  color: var(--text-muted); font-size: 14px;
+  padding: 3px 6px; border-radius: 5px;
+}
+.detailClose:hover { background: var(--card-hover); }
+.detailPreview {
+  height: 120px;
+  background: linear-gradient(135deg, rgba(0,103,251,0.1), rgba(255,153,0,0.1));
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 44px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border);
+}
+.detailName {
+  font-size: 13px; font-weight: 800; color: var(--text);
+  margin: 0 0 12px;
+  word-break: break-all;
+}
+.detailGrid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 7px 12px;
+  margin-bottom: 12px;
+}
+.detailKey { font-size: 12px; color: var(--text-muted); font-weight: 700; }
+.detailVal { font-size: 12px; color: var(--text); font-weight: 600; }
+.detailTags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 10px; }

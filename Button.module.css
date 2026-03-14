@@ -1,0 +1,46 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  border: 1.5px solid transparent;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+  text-decoration: none;
+  line-height: 1;
+  letter-spacing: 0.1px;
+}
+.btn:disabled { opacity: 0.55; cursor: not-allowed; transform: none !important; }
+.btn:not(:disabled):hover { transform: translateY(-1px); }
+.btn:not(:disabled):active { transform: translateY(0); }
+
+.btn-primary   { background: var(--blue);    color: #fff;             border-color: var(--blue);    }
+.btn-primary:not(:disabled):hover { background: var(--blue-dark); border-color: var(--blue-dark); }
+.btn-secondary { background: transparent;   color: var(--text);      border-color: var(--border);  }
+.btn-secondary:not(:disabled):hover { background: var(--card-hover); border-color: var(--border-strong); }
+.btn-success   { background: #059669;       color: #fff;             border-color: #059669;        }
+.btn-success:not(:disabled):hover { background: #047857; }
+.btn-danger    { background: #DC2626;       color: #fff;             border-color: #DC2626;        }
+.btn-danger:not(:disabled):hover { background: #B91C1C; }
+.btn-warning   { background: var(--orange); color: #fff;             border-color: var(--orange);  }
+.btn-warning:not(:disabled):hover { background: #E68900; }
+.btn-ghost     { background: transparent;   color: var(--blue);      border-color: var(--blue);    }
+.btn-ghost:not(:disabled):hover { background: var(--blue-light); }
+.btn-link      { background: transparent;   color: var(--blue);      border-color: transparent; padding-left: 4px; padding-right: 4px; }
+.btn-link:not(:disabled):hover { text-decoration: underline; }
+
+.size-sm { padding: 6px 12px; font-size: 12px; border-radius: 6px; }
+.size-md { padding: 8px 18px; font-size: 13px; }
+.size-lg { padding: 11px 24px; font-size: 14px; border-radius: 10px; }
+.size-xl { padding: 13px 28px; font-size: 15px; border-radius: 10px; }
+
+.fullWidth { width: 100%; }
+.spinner { display: inline-block; }
+.iconLeft  { display: flex; align-items: center; }
+.iconRight { display: flex; align-items: center; }

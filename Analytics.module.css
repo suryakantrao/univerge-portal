@@ -1,0 +1,122 @@
+.page { display: flex; flex-direction: column; gap: 22px; }
+.pageHeader { margin-bottom: 4px; }
+.pageTitle { font-size: 26px; font-weight: 900; color: var(--text); margin: 0 0 4px; }
+.pageSub   { font-size: 14px; color: var(--text-muted); margin: 0; }
+
+/* KPI */
+.kpiGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+@media (max-width: 900px) { .kpiGrid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .kpiGrid { grid-template-columns: 1fr; } }
+
+.kpiCard { padding: 22px !important; }
+.kpiLabel { font-size: 11px; font-weight: 800; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.8px; margin: 0 0 8px; }
+.kpiValue { font-size: 34px; font-weight: 900; margin: 0 0 6px; letter-spacing: -1px; }
+.kpiChange {
+  font-size: 11px; font-weight: 800;
+  color: #059669; background: #D1FAE5;
+  padding: 3px 9px; border-radius: 99px;
+}
+
+/* Charts row */
+.chartsGrid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 20px;
+}
+@media (max-width: 780px) { .chartsGrid { grid-template-columns: 1fr; } }
+
+.cardTitle { font-size: 15px; font-weight: 800; color: var(--text); margin: 0 0 20px; }
+
+/* Bar chart */
+.barChart {
+  display: flex; align-items: flex-end;
+  gap: 16px; height: 160px; padding-top: 24px;
+}
+.barGroup { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px; height: 100%; }
+.barVal   { font-size: 13px; font-weight: 800; color: var(--text); }
+.barOuter { flex: 1; width: 100%; display: flex; align-items: flex-end; }
+.barInner { width: 100%; border-radius: 6px 6px 0 0; transition: height 0.7s ease; min-height: 4px; }
+.barLabel { font-size: 12px; color: var(--text-muted); font-weight: 600; }
+
+/* Platform */
+.platformList { display: flex; flex-direction: column; gap: 18px; }
+.platformRow  {}
+.platformTop  { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; }
+.platformName { font-size: 13px; font-weight: 800; color: var(--text); }
+.platformEng  { font-size: 14px; font-weight: 900; }
+.barTrack     { height: 8px; border-radius: 99px; background: var(--border); overflow: hidden; }
+.barFill      { height: 100%; border-radius: 99px; transition: width 0.8s ease; }
+.platformPosts{ font-size: 11px; color: var(--text-muted); margin: 4px 0 0; }
+
+/* Approval chart */
+.approvalChart {
+  display: flex; align-items: flex-end;
+  gap: 20px; height: 140px; padding-top: 24px;
+  position: relative;
+}
+.approvalBar  { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px; height: 100%; }
+.approvalVal  { font-size: 12px; font-weight: 800; color: var(--text); }
+.approvalOuter{ flex: 1; width: 100%; display: flex; align-items: flex-end; }
+.approvalFill { width: 100%; border-radius: 6px 6px 0 0; transition: height 0.7s ease; min-height: 4px; }
+.approvalLabel{ font-size: 12px; color: var(--text-muted); font-weight: 600; }
+.approvalTarget { position: absolute; inset: 0; pointer-events: none; }
+.approvalTargetLine {
+  position: absolute; left: 0; right: 0; height: 1.5px;
+  background: #DC2626; opacity: 0.4;
+  border-top: 1.5px dashed #DC2626;
+}
+.approvalTargetLabel {
+  position: absolute; right: 0;
+  font-size: 10px; color: #DC2626; font-weight: 700;
+  background: var(--card); padding: 0 4px;
+}
+
+/* Top posts */
+.topPostsList { display: flex; flex-direction: column; }
+.topPostRow {
+  display: flex; align-items: center; gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+}
+.topPostRow:last-child { border-bottom: none; }
+.rank {
+  width: 32px; height: 32px; border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 900; flex-shrink: 0;
+}
+.topPostInfo { flex: 1; min-width: 0; }
+.topPostTitle { font-size: 14px; font-weight: 800; color: var(--text); margin: 0 0 6px; }
+.topPostStats { display: flex; gap: 14px; }
+.statPill { text-align: center; }
+.statPillNum   { display: block; font-size: 15px; font-weight: 900; color: var(--text); }
+.statPillLabel { display: block; font-size: 10px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+
+@media (max-width: 640px) {
+  .topPostStats { gap: 8px; }
+  .statPillNum { font-size: 13px; }
+}
+
+/* Status grid */
+.statusGrid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+  margin-top: 4px;
+}
+@media (max-width: 640px) { .statusGrid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 380px) { .statusGrid { grid-template-columns: repeat(2, 1fr); } }
+
+.statusTile {
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  padding: 16px 8px;
+  background: var(--card-hover);
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+.statusIcon  { font-size: 22px; }
+.statusCount { font-size: 22px; font-weight: 900; color: var(--text); }
+.statusLabel { font-size: 11px; color: var(--text-muted); font-weight: 700; text-transform: capitalize; }

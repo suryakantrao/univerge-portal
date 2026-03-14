@@ -1,0 +1,127 @@
+.page { display: flex; flex-direction: column; gap: 22px; }
+
+.pageHeader {
+  display: flex; align-items: flex-start;
+  justify-content: space-between; gap: 16px; flex-wrap: wrap;
+}
+.pageTitle { font-size: 26px; font-weight: 900; color: var(--text); margin: 0 0 4px; }
+.pageSub   { font-size: 14px; color: var(--text-muted); margin: 0; }
+
+.controls { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.select {
+  padding: 9px 14px;
+  border-radius: 8px;
+  border: 1.5px solid var(--input-border);
+  background: var(--input);
+  color: var(--text);
+  font-size: 13px;
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+.select:focus { outline: none; border-color: var(--blue); }
+
+.navBtns { display: flex; gap: 4px; }
+.navBtn {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1.5px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.14s;
+}
+.navBtn:hover { border-color: var(--blue); color: var(--blue); }
+
+/* Calendar */
+.calCard { overflow: hidden; }
+
+.dayHeaders {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  border-bottom: 1px solid var(--border);
+}
+.dayHeader {
+  padding: 12px 8px;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+.cell {
+  min-height: 110px;
+  padding: 8px;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  transition: background 0.14s;
+}
+.cell:nth-child(7n) { border-right: none; }
+.cell:nth-last-child(-n+7) { border-bottom: none; }
+.cellEmpty { background: var(--bg); }
+.cellToday { background: rgba(0,103,251,0.05); }
+
+.dayNum {
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+.dayNumToday {
+  background: var(--blue);
+  color: #fff;
+  font-weight: 800;
+}
+
+.eventChip {
+  padding: 2px 7px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  margin-bottom: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+
+@media (max-width: 640px) {
+  .cell { min-height: 70px; padding: 5px; }
+  .eventChip { display: none; }
+}
+
+/* Upcoming */
+.sectionTitle { font-size: 16px; font-weight: 800; color: var(--text); margin: 0 0 14px; }
+.upcomingList { display: flex; flex-direction: column; gap: 10px; }
+.emptyCard { padding: 32px !important; }
+
+.upcomingRow {
+  display: flex !important;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 18px !important;
+}
+.upcomingThumb {
+  width: 44px; height: 44px;
+  border-radius: 10px;
+  background: var(--card-hover);
+  border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; flex-shrink: 0;
+}
+.upcomingInfo  { flex: 1; min-width: 0; }
+.upcomingTitle { font-size: 14px; font-weight: 800; color: var(--text); margin: 0 0 5px; }
+.upcomingMeta  { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.upcomingDate  { font-size: 12px; color: var(--text-muted); font-weight: 500; }
